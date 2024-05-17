@@ -1,16 +1,7 @@
 import dotenv from 'dotenv'
 dotenv.config();
 
-async function permittedCharacters() {
-    let permitted = []
-    
-    if(process.env.UPPERCASE_LETTERS == "true") permitted.push(... "ABCDEFGHIJKLMNOPQRSTUVWXYZ")
-    if(process.env.LOWERCASE_LETTERS == "true") permitted.push(... "abcdefghijklmnopqrstuvwxyz")
-    if(process.env.NUMBERS == "true") permitted.push(... "1234567890")
-    if(process.env.SPECIAL_CHARACTERS == "true") permitted.push(... "!@#$%-_")
-
-    return permitted
-}
+import permittedCharacters from './utils/permitted-characters.js';
 
 async function handle() {
     let characters = []
